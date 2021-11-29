@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+.player {
+  position: relative;
+  top: 85px;
+  left: -15px;
+}
+
+/* 播放器内容区域（包括歌曲信息和进度条）样式 */
+
+.player-content {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 320px;
+  height: 90px;
+  padding: 0 20px 0 130px;
+  background-color: rgb(209, 226, 245);
+  border-radius: 10px 10px 0 0;
+  transition: top .3s ease;
+}
+
+.player-content.active {
+  top: -85px;
+}
+
+.music-name,
+.artist-name {
+  height: 20px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.music-name {
+  font-size: 12px;
+  color: #656565;
+}
+
+.time {
+  display: flex;
+  font-size: 12px;
+  height: 15px;
+  margin: 5px 0;
+  justify-content: space-between;
+}
+
+.cur-time,
+.end-time {
+  color: transparent;
+  font-size: 11px;
+  background-color: #e8f5ff;
+  border-radius: 8px;
+  transition: all .3s ease;
+}
+
+.time.active .cur-time,
+.time.active .end-time {
+  color: rgb(54, 127, 196);
+  background-color: transparent;
+}
+
+.progress-container,
+.progress-bar {
+  position: relative;
+  height: 4px;
+  border-radius: 4px;
+}
+
+.progress-container {
+  background-color: #e8f5ff;
+  cursor: pointer;
+}
+
+.curtime-prompt {
+  display: none;
+  position: absolute;
+  top: -29px;
+  padding: 5px 6px;
+  font-size: 12px;
+  color: #fff;
+  white-space: pre;
+  background-color: #4b4d5c;
+  border-radius: 4px;
+}
+
+.expect-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #4b4d5c;
+  opacity: .2;
+  z-index: 1;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: rgb(54, 127, 196);
+  transition: width .2s ease;
+}
+
+/* 播放器导航区域（包括封面和控制按钮）样式 */
+
+.player-nav {
+  position: relative;
+  /* top: 85px; */
+  width: 350px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 15px 20px 25px #656565;
+}
+
+.music-cover {
+  position: absolute;
+  top: -40px;
+  width: 100px;
+  height: 100px;
+  margin-left: 30px;
+  border-radius: 50%;
+  transform: rotateZ(0);
+  transition: all .3s ease;
+  box-shadow: 0 0 0 10px #fff;
+  overflow: hidden;
+}
+
+.music-cover.active {
+  top: -50px;
+  box-shadow: 0 0 0 4px #e8f5ff, 0 30px 50px -15px #afb7c1;
+}
+
+.music-cover::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  margin: -10px auto 0 auto;
+  background-color: #d6dee7;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #fff;
+  z-index: 1;
+}
+
+.music-cover img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .1s linear;
+}
+
+.music-cover.active img {
+  animation: round 3s linear infinite forwards;
+  z-index: 1;
+}
+
+.music-control {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 150px;
+}
+
+.music-control .btn {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #d6dee7;
+  cursor: pointer;
+}

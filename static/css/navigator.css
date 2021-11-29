@@ -1,0 +1,143 @@
+:root,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  background-image: linear-gradient(90deg, #c9c9c9, #c9c9c9);
+}
+
+body::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: url(../img/bg.png) center;
+  content: "";
+  z-index: -1;
+}
+
+.super {
+  position: relative;
+  height: 100%;
+}
+
+/* 侧边栏样式开始 */
+
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  padding: 28px 0 0 28px;
+  font-weight: bolder;
+  background: linear-gradient(#333, #222, #111);
+  box-sizing: border-box;
+  animation: fadeInLeft 1.2s ease;
+}
+
+.backhome {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.list-group {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.list-group li {
+  width: 100%;
+  margin-top: 5px;
+  color: #ccc;
+  line-height: 40px;
+  border-radius: 15px 0 0 15px;
+  cursor: pointer;
+}
+
+.list-group li:hover {
+  transition: color .3s ease-in-out;
+  color: #fff;
+
+}
+
+.list-group li.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+/* 侧边栏样式结束 */
+
+/* 主体内容区域开始 */
+
+.main {
+  min-height: 100vh;
+  padding: 60px 0 0 200px;
+  box-sizing: border-box;
+}
+
+.tab-content-item {
+  display: none;
+  padding: 20px;
+}
+
+.tab-content-item.is-show {
+  display: block;
+  animation: fadeInRight 1.2s ease;
+}
+
+.tab-content-item h2 {
+  width: 90px;
+  padding: 11px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  font-weight: normal;
+  border-radius: 8px;
+  background-color: #333;
+}
+
+.tab-content-item ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tab-content-item ul li {
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 15px;
+  width: 175px;
+  height: 82px;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .6);
+  transition: all .3s ease;
+}
+
+.tab-content-item ul li a {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #61b3e6;
+}
+
+.tab-content-item ul li:hover {
+  box-shadow: 0 0 4px rgba(223, 9, 169, 0.8), 0 2px 8px rgba(223, 9, 141, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .super .sidebar {
+    width: 110px;
+  }
+
+  .super .main {
+    padding-left: 110px;
+  }
+}
+
+/* 主体内容区域结束 */

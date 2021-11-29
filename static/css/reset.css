@@ -1,0 +1,36 @@
+html,
+body,
+div,
+img,
+form,
+input,
+label,
+div,
+span,
+ul,
+li,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}

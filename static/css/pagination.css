@@ -1,0 +1,36 @@
+/* 主体内容底边分页栏样式 */
+
+/* 外层的ul */
+.pagination {
+  display: flex;
+  padding: 8px;
+  margin-bottom: 30px;
+  margin-right: 330px;
+  font-size: 14px;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  justify-content: center;
+  list-style: none;
+  user-select: none;
+}
+
+.pagination li {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination li:hover {
+  color: #eee;
+  background-color: rgb(190, 190, 190);
+}
+
+.pagination li.current-page {
+  color: #eee;
+  background-color: rgb(84, 138, 197);
+}
