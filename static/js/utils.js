@@ -40,13 +40,13 @@
   /* 初始获取图片数据 */
   var initData = function () {
     ajax({
-      url: "https://api.hyfarsight.com/test/testRequest/imgList",
+      url: "/getUtilPic/",
       method: "GET",
-      data: {
-        page: 0,
-        size: 20
-      },
-      success: function (res) {
+      success: function ({
+        data
+      }) {
+        var picData = data;
+
         ajax({
           url: "/getUtilData/",
           method: "GET",
@@ -54,7 +54,7 @@
             data
           }) {
             utilData = data[0].utilName;
-            renderImgList(res.imgList);
+            renderImgList(picData);
           }
         });
       },

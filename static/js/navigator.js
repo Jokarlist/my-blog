@@ -46,7 +46,7 @@
           </li>
         `;
       }
-      
+
       ulNode.innerHTML = str;
       node.appendChild(ulNode);
     });
@@ -60,7 +60,7 @@
   /* 监听全局hash改变事件 */
   var onWindowHashChange = function () {
     var curHash = window.location.hash.split("#")[1];
-    
+
     tabItemArr.forEach(function (node) {
       node.classList.remove("is-show");
     });

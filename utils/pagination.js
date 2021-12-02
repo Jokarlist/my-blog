@@ -3,7 +3,7 @@
  * @param {用户传递的配置对象} options 
  * @param {调用该分页构造器的容器对象} wrap 
  */
-function Pager(options, wrap) {
+function Pager (options, wrap) {
   this.wrap = wrap;
   this.currentPage = options.currentPage || 1; // 当前页码
   this.totalPage = options.totalPage || 1; // 总页码数

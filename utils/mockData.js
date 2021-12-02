@@ -19,6 +19,13 @@ var utilTemplate = {
   "utilName|20": ["@ctitle(5, 8)"]
 }
 
+/* 瀑布流图片数据 */
+var utilPicArr = [];
+
+for (var i = 0; i < 20; i++) {
+  utilPicArr[i] = `http://wechat.hyfarsight.com/${i}.jpg`;
+}
+
 /* 前端导航页数据模板 */
 var navTemplate = {
   "navItemTitle|25": ["@ctitle(5, 10)"],
@@ -38,6 +45,13 @@ Mock.mock("/getUtilData/", {
   "msg": "请求数据成功",
   "data": [utilTemplate]
 })
+
+/* 初始时获取瀑布流图片数据 */
+Mock.mock("/getUtilPic/", {
+  "status": "success",
+  "msg": "请求数据成功",
+  "data": utilPicArr
+}) 
 
 /* 初始时获取热门文章和友情链接数据 */
 Mock.mock("/getWidgetData/", {

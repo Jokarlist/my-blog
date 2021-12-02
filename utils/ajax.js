@@ -1,4 +1,4 @@
-function ajax(options) {
+function ajax (options) {
   var url = options.url;
   var method = options.method ? options.method.toUpperCase() : "GET";
   var data = options.data || {};
@@ -31,4 +31,4 @@ function ajax(options) {
   }
 
   xhr.send(method === "POST" ? data : null);
-}
+};
